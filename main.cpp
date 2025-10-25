@@ -13,6 +13,6 @@ int main() {
 		}
 		++count;
 	}
-	std::cout << count << std::endl;
+	std::cout << "Count = " << count-1 << std::endl;
 	return 0;
 }

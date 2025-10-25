@@ -2,17 +2,21 @@
 #include <cstddef>
 
 int main() {
-	int a = 0; size_t count = 0;
-	while (!std::cin.eof()) {
-		std::cin >> a;
-		if (std::cin.bad()) {
-			return 1;
-		}
-		if (!std::cin.eof() && std::cin.fail()) {
-			return 2;
-		}
-		++count;
+	using u_t = unsigned;
+	u_t a = 0;
+	size_t count = 0;
+	while (std::cin >> a) {
+		count++;
 	}
-	std::cout << "Count = " << count-1 << std::endl;
+
+	if (std::cin.eof()) {
+		std::cout << count;
+		std::cout << '\n';
+	}
+	else if (std::cin.fail()) {
+		std::cout << "Error\n";
+		return 1;
+	}
+
 	return 0;
 }
